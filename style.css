@@ -16,6 +16,13 @@ body {
     text-align: center;
 }
 
+.gradient   h1 {
+    background: rgb(90,221,231);
+    background: linear-gradient(90deg, rgba(90,221,231,1) 20%, rgba(236,122,105,1) 100%, rgba(0,212,255,1) 100%); 
+ -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
 .img-container {
     height: 400px;
     max-width: 600px;
@@ -38,16 +45,20 @@ body {
     width: 100px;
     height: 100px;
     background-color: teal;
-    border-radius: 50%;
+    border-radius: 10%;
     overflow: hidden;
     transition: all 0.5s ease-in-out;
     cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .choice-img {
     transition: all 0.5s ease-in-out;
 }   
 
+.choice:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 
 .choice:hover .choice-img {
     transform: scale(1.5);
@@ -70,24 +81,7 @@ body {
  * animation rotate-center
  * ----------------------------------------
  */
- @-webkit-keyframes rotate-center {
-    0% {
-      -webkit-transform: rotate(0);
-              transform: rotate(0);
-    }
-    100% {
-      -webkit-transform: rotate(360deg);
-              transform: rotate(360deg);
-    }
-  }
-  @keyframes rotate-center {
-    0% {
-      -webkit-transform: rotate(0);
-              transform: rotate(0);
-    }
-    100% {
-      -webkit-transform: rotate(360deg);
-              transform: rotate(360deg);
-    }
-  }
-  
+
+ .poster {
+     width: 500px !important;
+ }
