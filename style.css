@@ -18,16 +18,71 @@ body {
 
 .gradient   h1 {
     background: rgb(90,221,231);
-    background: linear-gradient(90deg, rgba(90,221,231,1) 20%, rgba(236,122,105,1) 100%, rgba(0,212,255,1) 100%); 
+    background: linear-gradient(90deg, #5adee7 20%, #ec7a69 100%, rgba(0,212,255,1) 100%); 
  -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    margin: 0.8rem;
+    font-size: 1.4rem;
+  }
+
+  .game-container {
+      padding: 0.4rem;
   }
 
 .img-container {
+    position: relative;
     height: 400px;
-    max-width: 600px;
+    max-width: 500px;
     background-color: bisque;
     margin-top: 1.2rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.score {
+    border-radius: 50%;
+    height: 1.6rem;
+    line-height: 1.6rem;
+    width: 1.6rem;
+    display: inline-block;
+    font-size: 1.2rem;
+    /* font-weight: bold; */
+    padding: 0.2rem;
+    color: #000;
+
+}
+
+#playerScore {
+    background-color: rgb(67, 224, 224);
+    margin-left: 0.6rem;
+}
+
+#machineScore {
+    background-color: #f07865;
+    margin-right: 0.4rem;
+}
+
+
+ .center {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+
+.scoreboard {
+    position:absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.6rem 0.8rem;
+    background: rgb(39, 51, 89, 0.4);
+  border-radius: 10px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  color: #fff;
 }
 
  img {
@@ -57,7 +112,7 @@ body {
 }   
 
 .choice:hover {
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 8px 16px 0 #00000080, 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .choice:hover .choice-img {
@@ -67,6 +122,13 @@ body {
 .rotate-center {
 	-webkit-animation: rotate-center 0.6s ease-in-out both;
 	        animation: rotate-center 0.6s ease-in-out both;
+}
+
+#restart {
+    padding: 0.6rem 0.8rem;
+    background-image: linear-gradient(to right, #5adee7, #7ed4ad, #b0c37e, #d8ab71, #eb9487);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
 }
 
 /* ----------------------------------------------
