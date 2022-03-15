@@ -1,6 +1,6 @@
 
 // Selectors
-let win = document.querySelector('#win-msg');
+let restart = document.querySelector('#restart');
 let rock = document.querySelector(".rock")
 let paper = document.querySelector(".paper")
 let scissor = document.querySelector(".scissor")
@@ -17,8 +17,8 @@ let playerRock = false;
 let playerPaper = false;
 let playerScissor = false;
 
-let playerScore = 0;
-let machineScore = 0;
+var playerScore = 0;
+var machineScore = 0;
 
 
 // Game Functions
@@ -110,10 +110,6 @@ function decision() {
     }
 }
 
-// function winMsg(message) {
-//     win.textContent = message;
-// }
-
 function reset() {
     machineRock = false;
     machinePaper = false;
@@ -124,3 +120,14 @@ function reset() {
     playerScissor = false;
     console.log("reset")
 }
+
+const resetGame = () => {
+    playerScore = 0;
+    machineScore = 0;
+    playerScoreDiv.textContent = playerScore;
+    machineScoreDiv.textContent = machineScore;
+    reset();
+    console.log(playerScore);
+}
+
+restart.addEventListener("click", resetGame);
