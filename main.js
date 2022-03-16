@@ -7,6 +7,7 @@ let scissor = document.querySelector(".scissor")
 let playerScoreDiv = document.querySelector('#playerScore')
 let machineScoreDiv = document.querySelector('#machineScore')
 let displayImg = document.querySelector('#displayImg')
+let machineSelect = document.querySelector('.machineSelect');
 
 // Game State
 let machineRock = false;
@@ -74,6 +75,14 @@ function machinePick() {
     }
 }
 
+function machineChoice(select) {
+    machineSelect.textContent = `Robot Selected ${select}`;
+    machineSelect.classList.add('visible');
+    // setTimeout(() => {
+    //     machineSelect.classList.remove('visible');
+    // }, 1000);
+}
+
 function playGame() {
     machinePick()
     decision();
@@ -84,29 +93,34 @@ function decision() {
 
     if (machineRock == true && playerRock == true) {
         draw();
+        machineChoice('ROCK');
     } else if (machineRock == true && playerPaper == true) {
         playerScoreMsg();
-        console.log("Player 1")
+        machineChoice('ROCK');
     } else if (machineRock == true && playerScissor == true) {
         machineScoreMsg();
-        console.log("Machine won 1")
+        machineChoice('ROCK');
     } else if (machinePaper == true && playerRock == true) {
         machineScoreMsg();
-        console.log("Machine Wins 2")
+        machineChoice('PAPER');
     } else if (machinePaper == true && playerPaper == true) {
         draw();
+        machineChoice('PAPER');
     } else if (machinePaper == true && playerScissor == true) {
         playerScoreMsg();
+        machineChoice('PAPER');
         console.log("Player Wins 2")
     } else if (machineScissor == true && playerRock == true) {
         playerScoreMsg();
+        machineChoice('SCISSORS');
         console.log("Player Wins 3")
     } else if (machineScissor == true && playerPaper == true) {
         machineScoreMsg();
-        console.log("Machine Wins 3");
+        machineChoice('SCISSORS');
     }
     else {
         draw();
+        machineChoice('SCISSORS');
     }
 }
 
@@ -126,6 +140,8 @@ const resetGame = () => {
     machineScore = 0;
     playerScoreDiv.textContent = playerScore;
     machineScoreDiv.textContent = machineScore;
+    machineSelect.textContent = "";
+    machineSelect.classList.remove('visible');
     reset();
     console.log(playerScore);
 }

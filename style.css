@@ -96,6 +96,21 @@ body {
     object-fit: cover;
     border-radius: 10px;
 }
+
+.machineSelect {
+    background-color: #f08d7d;
+    width: 50%;
+    margin: 0 auto;
+    padding: 4px;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 1s ease-out;
+}
+
+.visible {
+    opacity: 1;
+}
+
 .choices {
     display: flex;
     justify-content: space-around;
@@ -144,6 +159,10 @@ body {
 
  @media screen and (max-width: 480px) {
     .img-container {
-      min-height: 280px;
+      min-height: 270px;
+    }
+
+    div.choices {
+        padding-top: 1rem;
     }
   }
